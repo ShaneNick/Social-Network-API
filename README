@@ -1,0 +1,45 @@
+Social Network API
+Description
+This is a backend API for a social network application. It uses Express.js for routing, MongoDB for data storage, and Mongoose as the ODM. The API endpoints allow for the creation, viewing, updating, and deletion of Users and Thoughts, as well as adding and removing friends from a User's friend list and adding and removing reactions to Thoughts.
+
+Table of Contents
+Installation
+Usage
+API Routes
+Tests
+Demo Video
+Questions
+Installation
+To install the necessary dependencies, run the following command:
+
+Copy code
+npm install
+This will install Express.js, Mongoose, and MongoDB.
+
+Usage
+To start the server, run the following command:
+npm start
+
+
+API Routes
+User
+GET all users: /api/user
+GET a single user by its _id and populated thought and friend data: /api/user/:id
+POST a new user: /api/user
+PUT to update a user by its _id: /api/user/:id
+DELETE to remove user by its _id: /api/user/:id
+POST to add a new friend to a user's friend list: /api/user/:userId/friends/:friendId
+DELETE to remove a friend from a user's friend list: /api/user/:userId/friends/:friendId
+Thought
+GET all thoughts: /api/thought
+GET a single thought by its _id: /api/thought/:id
+POST to create a new thought (and automatically push the thought's _id to the associated user's thoughts array): /api/thought
+PUT to update a thought by its _id: /api/thought/:id
+DELETE to remove a thought by its _id: /api/thought/:id
+POST to create a reaction stored in a single thought's reactions array field: /api/thought/:thoughtId/reactions
+DELETE to pull and remove a reaction by the reaction's reactionId value: /api/thought/:thoughtId/reactions/:reactionId
+Tests
+This application can be tested using Insomnia Core or Postman.
+
+Demo Video
+https://drive.google.com/file/d/1FtZwUdT2k5Bu-Byw0iw-NDDA1vBPAk8G/view
