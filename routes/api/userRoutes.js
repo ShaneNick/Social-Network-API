@@ -42,7 +42,6 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE to remove user by its _id
-// DELETE to remove user by its _id
 router.delete('/:id', async (req, res) => {
     try {
       await User.findByIdAndRemove(req.params.id);

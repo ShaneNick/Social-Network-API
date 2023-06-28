@@ -5,7 +5,7 @@ const userRoutes = require('./userRoutes');
 const thoughtRoutes = require('./thoughtRoutes');
 
 // Use the imported routes
-router.use('/users', userRoutes);
-router.use('/thoughts', thoughtRoutes);
+router.use('/user', userRoutes);
+router.use('/thought', thoughtRoutes);
 
 module.exports = router;

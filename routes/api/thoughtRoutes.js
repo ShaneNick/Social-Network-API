@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Thought } = require('../../models');
+const { Thought, User } = require('../../models');
+
 
 // GET all thoughts
 router.get('/', async (req, res) => {
@@ -28,9 +29,11 @@ router.post('/', async (req, res) => {
     await User.findByIdAndUpdate(req.body.userId, { $push: { thoughts: thought._id } }, { new: true });
     res.json(thought);
   } catch (err) {
+    console.error(err); // Log the error to the console
     res.status(500).json(err);
   }
 });
+
 
 // PUT to update a thought by its _id
 router.put('/:id', async (req, res) => {
